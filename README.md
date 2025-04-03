@@ -6,9 +6,11 @@ Dockerビルド
 
 1.`git clone git@github.com:t-tashita/product-management`  
 
-2.`cd product-management`  
+2.DockerDesktopアプリを立ち上げる  
 
-3.`docker-compose up -d --build`  
+3.`cd product-management`  
+
+4.`docker-compose up -d --build`  
 
 ※MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose .ymlファイルを編集してください  
 
