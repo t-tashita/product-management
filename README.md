@@ -20,11 +20,14 @@ Laravel環境構築
 
 3.env.exampleファイルからenvを作成し、環境変数を変更  
 
-4.`php artisan key:generate`  
+4.アプリケーションキーの作成　　
+`php artisan key:generate`  
 
-5.`php artisan migrate`  
+5.マイグレーションの実行　　
+`php artisan migrate`  
 
-6.`php artisan db:seed`  
+6.シーディングの実行  
+`php artisan db:seed`  
 
 # 使用技術  
 
