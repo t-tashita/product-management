@@ -49,7 +49,7 @@ class ProductsController extends Controller
         $seasons = Season::get();
         return view('detail', compact('product', 'seasons'));
     }
-    public function update(Request $request, $productId)
+    public function update(ProductRequest $request, $productId)
     {
         $productData = $request->only(['name', 'price', 'description']);
         Product::find($productId)->update($productData);
