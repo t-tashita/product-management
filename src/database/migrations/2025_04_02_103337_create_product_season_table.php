@@ -3,8 +3,10 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Product;
+use App\Models\Season;
 
-class CreateProductsTable extends Migration
+class CreateProductSeasonTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +15,10 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('product_season', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('price');
-            $table->string('image');
-            $table->text('description');
+            $table->foreignIdFor(Product::class)->constrained()->onDelete('cascade');;
+            $table->foreignIdFor(Season::class)->constrained()->onDelete('cascade');;
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });
@@ -31,6 +31,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('product_season');
     }
 }

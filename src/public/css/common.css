@@ -1,0 +1,17 @@
+.header {
+    background-color: #ffffff;
+    height: 5%;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 5px 2px;
+    max-width: 1230px;
+}
+
+.header__title {
+    color: #ffcc00;
+    font-size: 24px;
+    font-style: italic;
+    text-decoration: none;
+}
