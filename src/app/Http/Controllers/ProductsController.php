@@ -51,11 +51,6 @@ class ProductsController extends Controller
     }
     public function update(Request $request, $productId)
     {
-        if ($request->hasFile('image') && $request->file('image')){
-            $path = $request->file('image')->store('public/fruits-img');
-            $productData['image'] = basename($path);
-        }
-        dd($request);
         $productData = $request->only(['name', 'price', 'description']);
         Product::find($productId)->update($productData);
         $product = Product::where('id', $productId)->first();
